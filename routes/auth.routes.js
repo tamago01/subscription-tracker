@@ -1,8 +1,10 @@
 import { Router } from "express";
+import { login, logout, register } from "../controllers/auth.controller.js";
+
 const authRouter = Router();
 
-authRouter.post("/login", (req, res) => {
-  res.send("Welcome to the Subscription Tracker API!");
-});
+authRouter.post("/login", login);
+authRouter.post("/register", register);
+authRouter.post("/logout", logout);
 
 export default authRouter;
